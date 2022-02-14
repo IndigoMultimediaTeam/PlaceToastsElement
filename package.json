@@ -1,0 +1,8 @@
+{
+    "name": "toasts-group-web-component",
+    "scripts": {
+        "wca": "npm run wca:vscode & npm run wca:markdown",
+        "wca:vscode": "npx web-component-analyzer analyze ./PlaceToastsElement.js --format vscode --outFile ./wca/PlaceToastsElement.json",
+        "wca:markdown": "npx web-component-analyzer analyze ./PlaceToastsElement.js --format markdown --outFile ./wca/PlaceToastsElement.md"
+    }
+}

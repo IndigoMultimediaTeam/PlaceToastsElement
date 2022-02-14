@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "tags": [
+    {
+      "name": "place-toasts",
+      "description": "Toast notifications implementation inspired by `@see`.\nAttributes are not dynamic (evaluated when connected)!\n\nAttributes:\n\n  * `ui` {\"default\"|\"default-wrapper\"|\"custom\"} - To apply all default styles, or only for `<place-toasts>` itself, or no and use custom (via CSS).\n\n  * `color-scheme` {COLORSCHEME} - Prefered mode dark/ligh or detect from system (default). Make sence to use with `ui`≠'custom'.\n\nProperties:\n\n  * `ui` {\"default\"|\"default-wrapper\"|\"custom\"} - To apply all default styles, or only for `<place-toasts>` itself, or no and use custom (via CSS).\n\n  * `colorScheme` {`\"dark\" | \"light\" | \"auto\"`} - ",
+      "attributes": [
+        {
+          "name": "ui",
+          "description": "`ui` {\"default\"|\"default-wrapper\"|\"custom\"} - To apply all default styles, or only for `<place-toasts>` itself, or no and use custom (via CSS).\n\nProperty: ui\n\nDefault: default",
+          "values": []
+        },
+        {
+          "name": "color-scheme",
+          "description": "`color-scheme` {COLORSCHEME} - Prefered mode dark/ligh or detect from system (default). Make sence to use with `ui`≠'custom'.\n\nDefault: auto"
+        }
+      ]
+    }
+  ],
+  "globalAttributes": [],
+  "valueSets": []
+}

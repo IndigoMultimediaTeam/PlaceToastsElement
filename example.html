@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- DEL CSP https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP | https://github.com/Prinzhorn/minimal-csp -->
+
+    <title>PlaceToastsElement</title>
+    <meta name="description" content="Test PlaceToastsElement">
+    <script src="PlaceToastsElement.js"></script>
+    <style>
+        .show_code{ display: block; border: 3px dotted green; padding: 1rem; white-space: pre; }
+        .show_code::before { content: "Code example"; display: block; border-bottom: 3px dashed lightgreen; padding-bottom: .5rem; }
+    </style>
+</head>
+<body>
+    <place-toasts></place-toasts>
+    <script class="show_code">
+        const toasts= document.getElementsByTagName("place-toasts")[0];
+        toasts.add_("Initial notification");
+    </script>
+    <p>
+    This button show notifications (calls <code>toasts.add_</code>): <button onclick="toasts.add_('Button click')">Default notificattions</button> (<b>preferred</b>)
+    </p>
+    <place-toasts ui="custom"></place-toasts>
+    <script class="show_code">
+        const toasts_custom= document.querySelector("[ui=custom]");
+    </script>
+    <p>
+    This button show notifications (calls <code>toasts_custom.add_</code>) with custom styling: <button onclick="toasts_custom.add_('Button click')">Custom notificattions</button>
+    </p>
+    <style class="show_code">
+        place-toasts[ui="custom"] output{
+            background: pink; color: black;
+            animation: place-toasts-fade-in .3s ease, place-toasts-custom-slide-in .3s ease, place-toasts-fade-out .3s ease 3s;
+        }
+        @keyframes place-toasts-custom-slide-in { from { transform: translateX(5vw) } }
+    </style>
+</body>
+</html>
