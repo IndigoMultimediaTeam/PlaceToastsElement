@@ -30,7 +30,27 @@
     This button show notifications (calls <code>toasts_custom.add_</code>) with custom styling: <button onclick="toasts_custom.add_('Button click')">Custom notificattions</button>
     </p>
     <style class="show_code">
+        place-toasts[ui="custom"]{
+            position: fixed;
+            z-index: 1;
+            inset-inline: 0;
+            inset-block-start: 0;
+            padding-block-start: .5rem;
+            padding-inline-end: .5rem;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            gap: 1rem;
+            pointer-events: none;
+        }
         place-toasts[ui="custom"] output{
+            font-family: system-ui, sans-serif;
+            max-inline-size: min(25ch, 90vw);
+            padding-block: .5ch;
+            padding-inline: 1ch;
+            border-radius: 3px;
+            font-size: 1rem;
+            will-change: transform;
             background: pink; color: black;
             animation: place-toasts-fade-in .3s ease, place-toasts-custom-slide-in .3s ease, place-toasts-fade-out .3s ease 3s;
         }

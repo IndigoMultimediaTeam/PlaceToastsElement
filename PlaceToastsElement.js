@@ -27,7 +27,7 @@
         cssGroup(){
             const style_el= this.styleEl();
             const css= document.createTextNode([
-                PlaceToastsElement.tagName+"{",
+                PlaceToastsElement.tagName+":not([ui=custom]){",
                     "position: fixed;",
                     "z-index: 1;",
                     "inset-block-end: 0;",
@@ -56,8 +56,9 @@
             const anims= [ "fade-in", "slide-in", "fade-out" ].map(n=> PlaceToastsElement.tagName+"-"+n);
 
             const style_el= this.styleEl();
+            const t= PlaceToastsElement.tagName;
             const css= document.createTextNode([
-                PlaceToastsElement.tagName+" output{",
+                `${t}:not([ui]) output, ${t}[ui=default] output{`,
                     "font-family: system-ui, sans-serif;",
                     colors,
                     "background: hsl(0 0% var(--_bg-lightness) / 90%);",
@@ -83,7 +84,7 @@
      * Toast notifications implementation inspired by `@see`.
      * Attributes are not dynamic (evaluated when connected)!
      * 
-     * @version 1.0.0
+     * @version 1.0.1
      * @see https://web.dev/building-a-toast-component/
      * @see https://github.com/argyleink/gui-challenges/blob/main/toast/
      * @attr {"default"|"default-wrapper"|"custom"} [ui="default"] To apply all default styles, or only for `<place-toasts>` itself, or no and use custom (via CSS).
